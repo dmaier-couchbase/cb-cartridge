@@ -1,0 +1,47 @@
+#!/bin/bash
+export CB_HOME='/opt/couchbase'
+export CB_RUN='/etc/init.d/couchbase-server'
+
+function start {
+
+  echo Starting Couchbase ...
+  $CB_RUN start
+
+}
+
+function stop {
+  
+  echo Stopping Couchbase ...
+  $CB_RUN stop
+
+}
+
+function status {
+
+  echo Gathering the status of Couchbase ...
+  $CB_RUN status
+
+}
+
+function restart {
+  
+  echo Restarting Couchbase ...
+  $CB_RUN restart
+
+}
+
+
+case "$1" in
+  start)
+    start
+  ;;
+  stop)
+    stop
+  ;;
+  status)
+    status
+  ;;
+  restart)
+    restart
+  ;;
+esac
