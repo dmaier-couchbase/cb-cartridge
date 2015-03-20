@@ -1,0 +1,54 @@
+Name: cb-cartridge
+Cartridge-Short-Name: cb-cartridge
+Cartridge-Version: '0.1'
+Compatible-Versions:
+  - '1.0.1'
+Cartridge-Vendor: Couchbase
+Display-Name: Couchbase Cartridge
+Description: "This an example Couchbase cartridge for OpenShift v2"
+Version: '3.0.2'
+Versions:
+  - '3.0.2'
+License: "Apache License v2"
+License-Url: http://www.apache.org/licenses/LICENSE-2.0
+Vendor: dmaier-couchbase
+Categories:
+  - service
+  - embedded
+Website: https://github.com/dmaier-couchbase/cb-cartridge
+Help-Topics:
+  "About": https://github.com/dmaier-couchbase/cb-cartridge
+Cart-Data:
+  - Key: admin_user
+    Type: cart_data
+    Description: "The admin user"
+  - Key: admin_pwd
+    Type: cart_data
+    Description: "The admin password"
+  - Key: bucket_name
+    Type: cart_data
+    Description: "The bucket name"
+  - Key: bucket_pwd
+    Type: cart_data
+    Description: "The bucket password"
+  - Key: bucket_size
+    Type: cart_data
+    Description: "The bucket size"
+  - Key: host_name
+    Type: cart_data
+    Description: "The host name" 
+Provides:
+  - couchbase-server
+Publishes:
+  publish-http-url:
+    Type: "NET_TCP:httpd-proxy-info"
+  publish-gear-endpoint:
+    Type: "NET_TCP:gear-endpoint-info"
+Scaling:
+  Min: 1
+  Max: 1
+Endpoints:
+  - Private-IP-Name:   DB_HOST
+    Private-Port-Name: DB_PORT
+    Private-Port:      8091
+    Public-Port-Name:  DB_PROXY_PORT
