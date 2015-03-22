@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Environment
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+export CB_HOME=/opt/couchbase
+
+echo 'Configuring Couchbase ...'
+
+# Wait a moment until Couchbase Server is started
+# TODO: Wait by checking the state via 'couchbase-server status'
+echo 'Waiting for Couchbase Server to start ...'
+sleep 10
+
+# Setting the configuration
+CB_HOST=$OPENSHIFT_CB_DB_HOST
+CB_PORT=$OPENSHIFT_CB_DB_PORT
+CB_USER=admin
+CB_PASS=admin
+CB_RAM=512
+CB_DATA_PATH=$CB_HOME/var/lib/couchbase/data
+CB_INDEX_PATH=$CB_HOME/var/lib/couchbase/data
+
+env
+
+# Setup the node
+echo 'Setting up this node ...'
+$CB_HOME/bin/couchbase-cli node-init -c localhost:8091 \
+                                     --node-init-hostname=$CB_HOST \
+			             --node-init-data-path=$CB_DATA_PATH \
+			             --node-init-index-path=$CB_INDEX_PATH     
+# Setup the cluster
+echo 'Setting up the cluster ...'
+$CB_HOME/bin/couchbase-cli cluster-init -c localhost:8091 \
+				        --cluster-init-username=$CB_USER \
+					--cluster-init-password=$CB_PASS \
+					--cluster-init-port=$CB_PORT \
+					--cluster-init-ramsize=$CB_RAM
+
+
+# TODO: Create the bucket
+
+# Print out result
+client_result ""
+client_result " Installed Couchbase Server"
+client_result ""
+client_result " Admin User: $CB_USER"
+client_result " Admin Password: $CB_PASS"
+client_result " Bucket Name: default"
+client_result ""
+
+client_result 'Connection URL: http://$OPENSHIFT_CB_DB_HOST:$OPENSHIFT_CB_DB_PORT/'
+client_result ""
+
+cart_props "admin_user=$CB_USER"
+cart_props "admin_pwd=$CB_PASS"
+cart_props "ram_size=$CB_RAM"
+cart_props "host_name=$CB_HOST"
+cart_props "port=$CB_PORT"

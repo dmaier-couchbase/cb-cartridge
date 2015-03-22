@@ -1,0 +1,13 @@
+#!/bin/bash
+export CB_RPM='couchbase-server-enterprise-3.0.2-centos6.x86_64.rpm'
+export CB_DOWNLOAD="http://packages.couchbase.com/releases/3.0.2/$CB_RPM"
+
+echo 'Installing Deps ...'
+yum install wget
+
+echo 'Downloading Couchbase ...'
+cd  /tmp
+wget $CB_DOWNLOAD
+
+echo 'Installing Couchbase ...'
+rpm --install $CB_RPM

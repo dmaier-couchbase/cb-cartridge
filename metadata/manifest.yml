@@ -1,5 +1,5 @@
 Name: cb-cartridge
-Cartridge-Short-Name: cb-cartridge
+Cartridge-Short-Name: CB
 Cartridge-Version: '0.1'
 Compatible-Versions:
   - '1.0.1'
@@ -25,18 +25,15 @@ Cart-Data:
   - Key: admin_pwd
     Type: cart_data
     Description: "The admin password"
-  - Key: bucket_name
+  - Key: ram_size
     Type: cart_data
-    Description: "The bucket name"
-  - Key: bucket_pwd
-    Type: cart_data
-    Description: "The bucket password"
-  - Key: bucket_size
-    Type: cart_data
-    Description: "The bucket size"
+    Description: "The per node memory quota"
   - Key: host_name
     Type: cart_data
-    Description: "The host name" 
+    Description: "The host name"
+  - Key: port
+    Type: cart_data
+    Description: "The port" 
 Provides:
   - couchbase-server
 Publishes:

@@ -1,0 +1,13 @@
+# An example config file
+
+## Automatically set
+host_ip=<%= ENV['OPENSHIFT_CB_IP'] %>
+tmp_dir=<%= ENV['OPENSHIFT_CB_DIR'] %>
+
+## Automatically set from endpoint config
+host_name=<%= ENV['OPENSHIFT_CB_DB_HOST'] %>
+
+## Custom environment variables
+admin_user=<%= ENV['OPENSHIFT_CB_ADMIN_USER'] %>
+admin_pwd=<%= ENV['OPENSHIFT_CB_ADMIN_PWD'] %>
+ram_quota=<%= ENV['OPENSHIFT_CB_RAM_QUOTA'] %>
