@@ -1,13 +1,37 @@
 #!/bin/bash
 export CB_RPM='couchbase-server-enterprise-3.0.2-centos6.x86_64.rpm'
 export CB_DOWNLOAD="http://packages.couchbase.com/releases/3.0.2/$CB_RPM"
+export OPENSSL_RPM='openssl-1.0.1e-30.el6_6.2.x86_64.rpm'
+export OPENSSL_DOWNLOAD="http://mirror.centos.org/centos/6/updates/x86_64/Packages/$OPENSSL_RPM"
 
-echo 'Installing Deps ...'
-yum install wget
+export CB_DL_TARGET=$OPENSHIFT_CB_DIR/Download
+export CB_TARGET=$OPENSHIFT_CB_DIR
+export CB_DIR=$CB_TARGET/opt/couchbase
+
+
+echo 'Checking Download Environment ...'
+mkdir $CB_DL_TARGET
+echo "Downloading to $CB_DL_TARGET"
 
 echo 'Downloading Couchbase ...'
-cd  /tmp
+cd $CB_DL_TARGET
 wget $CB_DOWNLOAD
 
-echo 'Installing Couchbase ...'
-rpm --install $CB_RPM
+echo 'Extracting Couchbase ...'
+# Seems that OpenShift does not give you root permissions by default, so we have to perform a non-root installtion her instead using 'rpm --install $CB_RPM'
+rpm2cpio $CB_RPM | cpio --extract --make-directories --no-absolute-filenames
+mv opt $CB_TARGET
+
+echo 'Downloading OpenSSL ...'
+wget $OPENSSL_DOWNLOAD
+
+echo 'Extracting OpenSSL ...'
+rpm2cpio $OPENSSL_RPM | cpio --extract --make-directories --no-absolute-filenames
+mv usr/lib64/* $CB_DIR/lib/
+
+echo 'Running Prep Scripts ...'
+cd $CB_DIR
+./bin/install/reloc.sh `pwd`
+
+echo 'Starting Couchbase Server ...'
+./bin/couchbase-server \-- -noinput -detached

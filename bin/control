@@ -1,33 +1,35 @@
 #!/bin/bash
-export CB_HOME='/opt/couchbase'
-export CB_RUN='/etc/init.d/couchbase-server'
+export CB_HOME=$OPENSHIFT_CB_DIR/opt/couchbase
 
 function start {
 
   echo Starting Couchbase ...
-  $CB_RUN start
+  cd $CB_HOME
+  ./bin/couchbase-server \-- -noinput -detached
 
 }
 
 function stop {
   
   echo Stopping Couchbase ...
-  $CB_RUN stop
+  cd $CB_HOME
+  ./bin/couchbase-server -k
 
 }
 
 function status {
 
   echo Gathering the status of Couchbase ...
-  $CB_RUN status
+  ps -elf | grep couchbase-server
 
 }
 
 function restart {
   
   echo Restarting Couchbase ...
-  $CB_RUN restart
-
+  stop
+  sleep 10
+  start
 }
 
 
