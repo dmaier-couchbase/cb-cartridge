@@ -3,7 +3,7 @@ Cartridge-Short-Name: CB
 Cartridge-Version: '0.1'
 Compatible-Versions:
   - '1.0.1'
-Cartridge-Vendor: Couchbase
+Cartridge-Vendor: dmaier
 Display-Name: Couchbase Cartridge
 Description: "This an example Couchbase cartridge for OpenShift v2"
 Version: '3.0.2'
