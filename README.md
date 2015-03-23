@@ -27,6 +27,13 @@ This is just an example OpenShift v2 Couchbase Cartridge Example. It allows you 
 
 ## How to install this Cartridge to your Application
 
-rhc add-cartridge https://raw.githubusercontent.com/dmaier-couchbase/cb-cartridge/master/metadata/manifest.yml -a $app_name
+* E.G. Create a sample application based on Node.js
+```
+rhc app create $app_name nodejs-0.10
+```
 
+* Install the cartridge
+```
+rhc add-cartridge https://raw.githubusercontent.com/dmaier-couchbase/cb-cartridge/master/metadata/manifest.yml -a $app_name
+```
 
