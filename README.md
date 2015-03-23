@@ -6,7 +6,7 @@ This is just an example OpenShift v2 Couchbase Cartridge Example. It allows you 
 
 * Install Script
   * Download Couchbase Server 3.0.2 and the OpenSSL dependencies to your Application
-  * Perfrom a single node non-root installation of Couchbase Server 3.0.2 to your application root directory
+  * Perform a single node non-root installation of Couchbase Server 3.0.2 to your application root directory
   * Start Couchbase Sever
 
 * Post Install Script
