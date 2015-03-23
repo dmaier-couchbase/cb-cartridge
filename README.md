@@ -20,9 +20,9 @@ This is just an example OpenShift v2 Couchbase Cartridge Example. It allows you 
   * Keep the 'default' bucket
 
 * Control Script
-  * Start Couchbase Server
-  * Stop Couchbase Server
-  * Restart Couchbase Server
+  * Start the single Couchbase Server instance
+  * Stop the single Couchbase Server instance
+  * Restart the single Couchbase Server instance
   * Get the status of the Couchbase Server Installation
 
 ## How to install this Cartridge to your Application
