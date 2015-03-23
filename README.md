@@ -6,17 +6,17 @@ This is just an example OpenShift v2 Couchbase Cartridge Example. It allows you 
 
 * Install Script
   * Download Couchbase Server 3.0.2 and the OpenSSL dependencies to your Application
-  * Perfrom a single node non-root installation of Couchbase Server 3.0.2 to your Application Root directory
+  * Perfrom a single node non-root installation of Couchbase Server 3.0.2 to your application root directory
   * Start Couchbase Sever
 
 * Post Install Script
-  * Set Server Node Name
+  * Set server node name
   * Set the default index path
   * Set the default data path
-  * Set the Admin user name to a default value
-  * Set the Admin password to a default value
-  * Set the Admin port to a default value
-  * Set the Memory Quota to a defualt value
+  * Set the admin user name to a default value
+  * Set the admin password to a default value
+  * Set the admin port to a default value
+  * Set the memory quota to a defualt value
   * Keep the 'default' bucket
 
 * Control Script
@@ -36,4 +36,3 @@ rhc app create $app_name nodejs-0.10
 ```
 rhc add-cartridge https://raw.githubusercontent.com/dmaier-couchbase/cb-cartridge/master/metadata/manifest.yml -a $app_name
 ```
-
