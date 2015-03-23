@@ -101,7 +101,7 @@ Endpoints:
     Private-Port:      4369
     Public-Port-Name:  DB_ERL_PM_PROXY_PORT
     
- - Private-IP-Name:   DB_HOST
-   Private-Port-Name: DB_21100_PORT
-   Private-Port:      21100
-   Public-Port-Name:  DB_21100_PROXY_PORT
+  - Private-IP-Name:   DB_HOST
+    Private-Port-Name: DB_21100_PORT
+    Private-Port:      21100
+    Public-Port-Name:  DB_21100_PROXY_PORT
