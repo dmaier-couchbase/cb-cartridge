@@ -1,4 +1,4 @@
-# Couchbase Cartridge Example
+# Couchbase Cartridge
 
 This is just an example OpenShift v2 Couchbase Cartridge Example. It allows you the following:
 
