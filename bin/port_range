@@ -1,0 +1,12 @@
+#!/bin/bash
+for i in {21100..21299}
+do
+    echo " - Private-IP-Name:   DB_HOST"
+    echo "   Private-Port-Name: DB_${i}_PORT"
+    echo "   Private-Port:      $i"
+    echo "   Public-Port-Name:  DB_${i}_PROXY_PORT"
+    echo ''
+done
+
+
+

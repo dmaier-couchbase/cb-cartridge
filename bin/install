@@ -5,7 +5,7 @@ export OPENSSL_RPM='openssl-1.0.1e-30.el6_6.2.x86_64.rpm'
 export OPENSSL_DOWNLOAD="http://mirror.centos.org/centos/6/updates/x86_64/Packages/$OPENSSL_RPM"
 
 export CB_DL_TARGET=$OPENSHIFT_CB_DIR/Download
-export CB_TARGET=$OPENSHIFT_CB_DIR
+export CB_TARGET=$OPENSHIFT_DATA_DIR
 export CB_DIR=$CB_TARGET/opt/couchbase
 
 

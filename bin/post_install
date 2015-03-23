@@ -2,7 +2,7 @@
 
 # Environment
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
-export CB_HOME=$OPENSHIFT_CB_DIR/opt/couchbase
+export CB_HOME=$OPENSHIFT_DATA_DIR/opt/couchbase
 
 echo 'Configuring Couchbase ...'
 
