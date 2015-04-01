@@ -33,6 +33,11 @@ rhc app create $app_name nodejs-0.10
 ```
 
 * Install the cartridge
+
+For OpenShift Online:
+
 ```
 rhc add-cartridge https://raw.githubusercontent.com/dmaier-couchbase/cb-cartridge/master/metadata/manifest.yml -a $app_name
 ```
+
+For OpenShift Enterprise follow the following article: https://access.redhat.com/documentation/en-US/OpenShift_Enterprise/2/html/Administration_Guide/Installing_and_Removing_Custom_and_Community_Cartridges.html
