@@ -5,8 +5,8 @@ This is just an example OpenShift v2 Couchbase Cartridge Example. It allows you 
 ## Features
 
 * Install Script
-  * Download Couchbase Server 3.0.2 and the OpenSSL dependencies to your Application
-  * Perform a single node non-root installation of Couchbase Server 3.0.2 to your application root directory
+  * Download Couchbase Server 4.5.0-BETA and the OpenSSL dependencies to your Application
+  * Perform a single node non-root installation of Couchbase Server 4.5.0-BETA to your application root directory
   * Start Couchbase Sever
 
 * Post Install Script
@@ -35,7 +35,7 @@ rhc app create $app_name nodejs-0.10
 * Install the cartridge (OpenShift Online)
 
 ```
-rhc add-cartridge https://raw.githubusercontent.com/dmaier-couchbase/cb-cartridge/master/metadata/manifest.yml -a $app_name
+rhc add-cartridge https://raw.githubusercontent.com/dmaier-couchbase/cb-cartridge/cbsantos/metadata/manifest.yml -a $app_name
 ```
 
 * For OpenShift Enterprise follow the following article: 
