@@ -15,9 +15,9 @@ Vendor: dmaier-couchbase
 Categories:
   - service
   - embedded
-Website: https://github.com/dmaier-couchbase/cb-cartridge
+Website: https://github.com/CelsoSantos/cb-cartridge
 Help-Topics:
-  "About": https://github.com/dmaier-couchbase/cb-cartridge
+  "About": https://github.com/CelsoSantos/cb-cartridge
 Cart-Data:
   - Key: admin_user
     Type: cart_data
@@ -36,7 +36,7 @@ Cart-Data:
     Description: "The port" 
 Provides:
   - couchbase-server
-Source-Url: https://github.com/dmaier-couchbase/cb-cartridge.git
+Source-Url: https://github.com/CelsoSantos/cb-cartridge.git
 Publishes:
   publish-http-url:
     Type: "NET_TCP:httpd-proxy-info"
